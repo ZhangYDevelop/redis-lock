@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.UUID;
 
 
 @RestController
@@ -27,10 +28,11 @@ public class TestRestController {
     @Autowired
     private RedissionService redissionService;
 
-    @Autowired
-    private RedisClusterRedissionService redisClusterRedissionService;
+//    @Autowired
+//    private RedisClusterRedissionService redisClusterRedissionService;
     @GetMapping("/order")
-    public String test() {
-      return  redisClusterRedissionService.takeOrder();
+    public void test() {
+        redisService.takeOrder(UUID.randomUUID().toString());
+//        redissionService.takeOrder();
     }
 }

@@ -72,4 +72,17 @@ public class RedisClient {
         RedisPool.close(jedis);
         return result;
     }
+
+    /**
+     * 给锁延时
+     * @param key
+     * @param second
+     * @return
+     */
+    public Long exporeKey (String key, int second) {
+        Jedis jedis = RedisPool.getJedis();
+        Long result = jedis.expire(key, second );
+        RedisPool.close(jedis);
+        return  result;
+    }
 }

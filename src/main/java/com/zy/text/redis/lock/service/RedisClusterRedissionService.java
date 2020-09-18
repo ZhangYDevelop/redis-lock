@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * redis 集群模式中分布式锁处理
  */
-@Service
+//@Service
 @SuppressWarnings("all")
 public class RedisClusterRedissionService {
     // 商品锁 key 值

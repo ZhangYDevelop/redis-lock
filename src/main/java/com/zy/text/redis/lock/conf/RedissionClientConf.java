@@ -16,10 +16,10 @@ public class RedissionClientConf {
     public RedissonClient redissonClient() {
         Config config = new Config();
         config.setTransportMode(TransportMode.NIO);
-//        config.useSingleServer().setAddress("redis://192.168.106.137:6379").setPassword("redis");
+        config.useSingleServer().setAddress("redis://192.168.106.116:6379").setPassword("redis");
 //        config.useSingleServer().setAddress("redis://192.168.106.137:6379");
-        config.useClusterServers().addNodeAddress("redis://192.168.106.137:6379", "redis://192.168.106.137:6380","redis://192.168.106.136:6379",
-                "redis://192.168.106.136:6380","redis://192.168.106.135:6379","redis://192.168.106.135:6380");
+//        config.useClusterServers().addNodeAddress("redis://192.168.106.137:6379", "redis://192.168.106.137:6380","redis://192.168.106.136:6379",
+//                "redis://192.168.106.136:6380","redis://192.168.106.135:6379","redis://192.168.106.135:6380");
         RedissonClient redisson = Redisson.create(config);
         return  redisson;
     }
